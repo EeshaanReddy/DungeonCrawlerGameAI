@@ -172,7 +172,9 @@ public class MovementController : MonoBehaviour
         // Right mouse button or spacebar: Magical sword attack
         if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Space))
         {
-            animController.SetTrigger("Attack");
+            if(AttackScript.attackScript.Attack(transform.position))
+                animController.SetTrigger("Attack");
+            
         }
     }
 

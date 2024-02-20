@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 4023215848608658}
   - component: {fileID: 95161444847813696}
   - component: {fileID: 7700237990574956823}
+  - component: {fileID: -111543544074482856}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -451,6 +452,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  hord1: 0
+--- !u!114 &-111543544074482856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30adbd0991d458c4d8d27fca284a1622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989916952965676
 GameObject:
   m_ObjectHideFlags: 0

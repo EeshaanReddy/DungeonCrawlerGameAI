@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Node
+public class Node : IComparable<Node>
 {
     public Vector3 Position { get; private set; }
     public List<Node> Neighbors { get; private set; }
@@ -9,6 +10,8 @@ public class Node
     public float GCost { get; set; }
     public float HCost { get; set; }
     public Node Parent { get; set; }
+
+    public Transform floor;
 
     public Node(Vector3 position)
     {
@@ -19,6 +22,15 @@ public class Node
     public void AddNeighbor(Node neighbor)
     {
         Neighbors.Add(neighbor);
+    }
+
+    public int CompareTo(Node other)
+    {
+        if (HCost > other.HCost)
+            return 1;
+        if (HCost < other.HCost)
+            return -1;
+        return 0;
     }
 }
 
@@ -41,6 +53,7 @@ public class Pathfinder : MonoBehaviour
         {
             Vector3 nodePosition = child.position;
             Node newNode = new Node(nodePosition);
+            newNode.floor = child;
             nodes.Add(newNode);
         }
 
