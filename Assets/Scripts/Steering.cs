@@ -37,11 +37,14 @@ public class Steering_output
 
 public abstract class Steering : MonoBehaviour
 {
+    public VelManager vel;
+    
     public abstract Steering_output getSteering(Vector3 targetLoc, bool flee);
    // public abstract Kinematic getKinematic();
 
     void Update()
     { 
         Steering_output steering = getSteering(Vector3.zero, false);
+        
     }
 }

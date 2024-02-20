@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4990016090922594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EyeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4418890088391708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4122232275892010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomEyeCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4205655170070120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4016204425067502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UpperEyeCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4365350966287532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4409866491529092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4041259413140590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4127066169186206}
   - component: {fileID: 137702289541837672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4408566645186202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EyeCTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,11 @@ GameObject:
   - component: {fileID: 95161444847813696}
   - component: {fileID: 7700237990574956823}
   - component: {fileID: -111543544074482856}
-  m_Layer: 0
+  - component: {fileID: 6056747724399636351}
+  - component: {fileID: -5926830640763086073}
+  - component: {fileID: 9170518718029239758}
+  - component: {fileID: -4429752153552209805}
+  m_Layer: 6
   m_Name: SlimePBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98509339bd3c7924c8e38be405b835d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vel: {fileID: -4429752153552209805}
   target: {fileID: 0}
   hord1: 0
 --- !u!114 &-111543544074482856
@@ -465,6 +470,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30adbd0991d458c4d8d27fca284a1622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &6056747724399636351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!65 &-5926830640763086073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.6759795, z: 1}
+  m_Center: {x: 0, y: 0.61207104, z: 0}
+--- !u!114 &9170518718029239758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e86e2e8a92d604aae7a1a55563a862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repulseThreshold: 4
+  maxAccel: 20
+  vel: {fileID: -4429752153552209805}
+--- !u!114 &-4429752153552209805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919012471076396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a183ad2af7aa6c49a82db7d659c8990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6056747724399636351}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1989916952965676
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4537929633066036}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Side_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

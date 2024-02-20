@@ -8,6 +8,7 @@ public class Seek : Steering
     public bool hord1;
     Vector3 currentLocation;
     Kinematic kinematic;
+    private Vector3 lastVelocity = Vector3.zero;
 
     public override Steering_output getSteering(Vector3 targetLoc, bool flee)
     {
@@ -29,23 +30,29 @@ public class Seek : Steering
         kinematic = new Kinematic();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if ((hord1) ? target.transform.position.x < 44 && target.transform.position.z < 32 :
            target.transform.position.x > 58 && target.transform.position.z > 46)
         {
             //kinematic.Update(steering, maxSpeed, Time.deltaTime);
             Steering_output steering = getSteering(target.transform.position, false);
-            steering.linear *= 1.5f;
-            transform.position += steering.linear * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
+            steering.linear *= 4.5f;
+            Vector3 vel = base.vel.velocity;
+            vel -= lastVelocity;
+            lastVelocity = steering.linear;
+            vel += lastVelocity;
+            base.vel.velocity = vel;
         }
         else if ((transform.position - currentLocation).magnitude >= 0.5f)
         {
             Steering_output steering = getSteering(currentLocation, false);
-            steering.linear *= 1.5f;
-            transform.position += steering.linear * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
+            steering.linear *= 4.5f;
+            Vector3 vel = base.vel.velocity;
+            vel -= lastVelocity;
+            lastVelocity = steering.linear;
+            vel += lastVelocity;
+            base.vel.velocity = vel;
         }
 
     }
